@@ -2,4 +2,7 @@
 node_modules/ 
 
 # enviornment variables
-.env
+.env 
+
+# demoGIF
+demoGIF.gif 

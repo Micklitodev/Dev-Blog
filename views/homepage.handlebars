@@ -1,0 +1,17 @@
+
+<div class="container">
+    <h2> 
+        Blogs
+    </h2>
+    {{#each posts as |post|}} 
+    <div> 
+        <h3>
+            {{post.post_sub}} 
+        </h3>
+        <p> 
+            {{post.post_descr}}
+            -  {{post.user_id}}
+        </p>
+    </div>
+    {{/each}}
+</div>
