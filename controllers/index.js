@@ -4,11 +4,15 @@ const homeRoutes = require("./hompage-routes.js");
 const loginRoutes = require("./login.js");
 const signupRoutes = require("./signup.js");
 
+const userRoutes = require('./api/userroutes.js')
+
 router.use("/", homeRoutes);
 
 router.use("/login", loginRoutes);
 
 router.use("/signup", signupRoutes);
+
+router.use('/api', userRoutes)
 
 
 module.exports = router;

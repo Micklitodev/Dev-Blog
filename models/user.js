@@ -8,6 +8,9 @@ class User extends Model {
   verifyPass(pass) {
     return bcrypt.compareSync(pass, this.password);
   }
+  returnUserName() {
+    return this.username
+  }
 }
 
 User.init(
@@ -22,7 +25,7 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    email: {
+    email: {  
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,

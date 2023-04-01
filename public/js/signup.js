@@ -9,7 +9,7 @@ btn.addEventListener("click", async (e) => {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  fetch("/signup", {
+  await fetch("/api/signup", {
     method: "POST",
     headers: {
       Accept: "application/json, text/plain, */*",
@@ -21,6 +21,9 @@ btn.addEventListener("click", async (e) => {
       password: password,
     }),
   }).then((res) => {
-    console.log("Fetch: ", res);
+    console.log(res);
+    if(res.status == 200) {
+      window.location.href = '/'
+    }
   });
 });

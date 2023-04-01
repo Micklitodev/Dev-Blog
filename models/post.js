@@ -25,6 +25,9 @@ Posts.init(
       notEmpty: true,
     },
   },
+  username: { 
+    type: DataTypes.STRING
+  }, 
   user_id: {
     type: DataTypes.INTEGER,
     references: {

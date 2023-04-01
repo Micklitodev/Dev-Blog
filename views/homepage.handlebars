@@ -1,19 +1,20 @@
-
 <div class="container">
-    <h2> 
-        Blogs
-    </h2>
-    {{#each posts as |post|}} 
+  <h2>
+    Blogs
+  </h2>
+  {{#each posts as |post|}}
     <div class="feed">
-        <h3>
-            {{post.post_sub}} 
-        </h3>
-        <p> 
-            {{post.post_descr}}
-            
-            -  {{post.user_id}} {{post.date_time}} 
-        </p>
-         <div> Comment</div>
+      <h3>
+        {{post.post_sub}}
+      </h3>
+      <p>
+        {{post.post_descr}}
+
+        -
+        {{post.username}}
+        {{post.date_time}}
+      </p>
+      <div> Comment</div>
     </div>
-    {{/each}}
+  {{/each}} 
 </div>
