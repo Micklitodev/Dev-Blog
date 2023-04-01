@@ -1,0 +1,30 @@
+* {
+   display: grid; 
+   place-items: center;
+}
+
+:root { 
+ --dark: rgba(20, 50 , 180, .5)
+}
+
+header {
+   background-color: var(--dark);
+   width: 100vw;
+   position: fixed;
+   top: 0;
+}
+
+nav {
+   margin-top: 100px
+}
+.container {
+   margin-top: 25px 
+}
+
+.feed {
+   border: solid 1px black;
+   width: 300%;
+   margin-bottom: 10px;
+   border-radius: 5px;
+   padding: 5px;
+} 
