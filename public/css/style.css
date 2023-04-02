@@ -28,3 +28,10 @@ nav {
    border-radius: 5px;
    padding: 5px;
 } 
+
+.comment{ 
+   border: solid 1px black;
+   width: 150%;
+   border-radius: 5px;
+   padding: 5px;
+}

@@ -1,0 +1,34 @@
+<div>
+  <div class="feed">
+    <h3>
+      {{sub}}
+    </h3>
+    <p>
+      {{descr}}
+      -
+      {{username}}
+      {{post.date_time}}
+    </p>
+  </div>
+  <div>
+    comments:
+    {{#each comment as |comment|}}
+      <div class="comment">
+        {{comment.comment_body}}
+        <br />
+        -{{comment.username}}
+      </div>
+    {{/each}}
+  </div>
+  <div>
+
+    {{#if loggedIn}}
+      <form>
+        <label for="comment"></label>
+        <textarea id="comment" name="comment" rows="10" cols="80"></textarea>
+        <br />
+        <button id="newComment"> Comment </button>
+      </form>
+    {{/if}}
+  </div>
+</div>  
