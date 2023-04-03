@@ -1,7 +1,10 @@
+/* ------------------ global variables --------------- */
 :root {
   --purple: rgb(88, 154, 225);
   --offwhite: rgba(120, 128, 128, 0.897);
 }
+
+/* ------------------ individual selector --------------- */
 
 body {
   background-color: var(--offwhite);
@@ -16,12 +19,12 @@ textarea {
   background-color: rgba(251, 251, 251, 0.897);
 }
 
+/* ------------------ home page ------------------ */
+
 .navbar-brand {
   margin-left: 10px;
   color: var(--purple);
 }
-
-/* ----------- home page --------- */
 
 .blogfeed {
   margin-left: 8%;
@@ -42,7 +45,8 @@ textarea {
   margin-right: 10%;
 }
 
-/* ----------- login page --------- */
+/* ----------------- login page ------------------ */
+
 .loginform {
   display: grid;
   place-items: center;
@@ -65,7 +69,7 @@ textarea {
   margin-top: 30%;
 }
 
-/* ------------------ comments --------------------- */
+/* ----------------- comments ------------------- */
 
 .comment {
   border: solid 1px black;
@@ -74,7 +78,7 @@ textarea {
   padding: 5px;
 }
 
-/* ------------------ signature --------------------- */
+/* ---------------- signature ------------------- */
 
 .sig {
   font-size: 11px;
@@ -100,4 +104,11 @@ input {
   place-items: center;
   margin-right: 20%;
   margin-bottom: 7%;
+}
+
+
+/* ------------------- pseudo class -------------------- */
+
+a:hover {
+  opacity: .8;
 }

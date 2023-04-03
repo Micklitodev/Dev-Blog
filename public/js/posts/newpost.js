@@ -10,7 +10,7 @@ newPostBtn.addEventListener("click", async (e) => {
   console.log(post_sub);
   console.log(post_descr);
 
-  await fetch("/", {
+  await fetch("/api/newpost", {
     method: "POST",
     headers: {
       Accept: "application/json, text/plain, */*",

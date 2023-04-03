@@ -1,20 +1,17 @@
 const router = require("express").Router();
 
-const homeRoutes = require("./hompage-routes.js");
-const loginRoutes = require("./login.js");
-const signupRoutes = require("./signup.js");
-const commentRoutes = require("./api/commentroutes.js");
+const pageRoutes = require("./pageroutes.js");
+const commentRoutes = require("./api/commentroutes.js")
+const postRoutes = require('./api/postroutes.js')
 
 const userRoutes = require("./api/userroutes.js");
 
-router.use("/", homeRoutes);
-
-router.use("/login", loginRoutes);
-
-router.use("/signup", signupRoutes);
+router.use("/", pageRoutes);
 
 router.use("/api", userRoutes);
 
 router.use("/api", commentRoutes);
+
+router.use('/api', postRoutes)
 
 module.exports = router;

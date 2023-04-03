@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { Posts, Comment } = require("../models");
 
-// ----------- show all posts ----------------
+// ----------- homepage  ----------------
 router.get("/", async (req, res) => {
   try {
     const allPosts = await Posts.findAll();
@@ -16,27 +16,29 @@ router.get("/", async (req, res) => {
   }
 });
 
-// ----------- create post ---------------------
-
-router.post("/", async (req, res) => {
-  let date = new Date();
-  let today = date.toLocaleString();
-
+// ------------- login ----------------- 
+router.get("/login", async (req, res) => {
   try {
-    const newPost = await Posts.create({
-      post_sub: req.body.post_sub,
-      post_descr: req.body.post_descr,
-      username: req.session.username,
-      date: today,
-    });
-    res.status(200).json(newPost);
+    res.render("login", {});
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
 
-//------------ show one post ---------------
+// ------------ signup ------------------
+
+router.get("/signup", async (req, res) => {
+  try {
+    res.render("signup", {});
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+
+//------------ single post view ---------------
 
 router.get("/post/:id", async (req, res) => {
   try {
@@ -50,7 +52,6 @@ router.get("/post/:id", async (req, res) => {
     const descr = specificPost.dataValues.post_descr;
     const username = specificPost.dataValues.username;
     const date = specificPost.dataValues.date;
-    // console.log(specificPost.dataValues.post_descr)
     res.status(200).render("post", {
       sub,
       descr,
@@ -65,36 +66,6 @@ router.get("/post/:id", async (req, res) => {
   }
 });
 
-// ------------ Delete Post -------------
-router.delete("/api/dashboard", async (req, res) => {
-  try {
-    const findPostForDel = await Posts.destroy({
-      where: {
-        id: req.body.post_id,
-      },
-    });
-    res.status(200).json(findPostForDel);
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
-// --------- Update Post ----------------
-router.put("/api/dashboard", async (req, res) => {
-  try {
-    console.log(req.body.post_id);
-    const updatePost = await Posts.update(req.body, {
-      where: {
-        id: req.body.post_id,
-      },
-    });
-    res.status(200).json(updatePost);
-  } catch (err) {
-    console.log(err);
-    res.status(200).json(err);
-  }
-});
 
 // ----------- Dashboard ---------------
 
