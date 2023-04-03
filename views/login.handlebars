@@ -1,22 +1,45 @@
-<div>
-  <h2>Login</h2>
+<div class="loginform">
+  <div>
+    <h2 class="header">Login</h2>
+  </div>
   <form>
-    <div>
+    <div class="form-group">
       <label for="email">Email</label>
-      <input type="text" id="email" />
-    </div>
-    <div>
-      <label for="password">Password</label>
-      <input type="password" id="password" />
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        aria-describedby="email"
+        placeholder="Enter email"
+      />
+      <small id="emailHelp" class="form-text text-muted">We'll never share your
+        email with anyone else.</small>
     </div>
     <br />
-    <div>
-      <button id='logInBtn' type="submit">Log In</button>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        placeholder="Password"
+      />
     </div>
+    <br />
+    <button
+      type="submit"
+      class="btn btn-primary loginbtn"
+      id="logInBtn"
+    >Submit</button>
   </form>
+  <br />
+  <small id="signupinfo" class="form-text text-muted">Dont have an account? Sign
+    up!
+  </small>
+  <div>
+    <a href="/signup"><button class="btn btn-primary signupbtn">
+        Sign Up!
+      </button></a>
+  </div>
+  <script src="./js/login.js"></script>
 </div>
-<br />
-<div>
-  <a href="/signup"> Sign Up Here! </a>
-</div>
-<script src="./js/login.js"></script> 

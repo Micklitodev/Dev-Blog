@@ -1,33 +1,103 @@
-
-:root { 
- --dark: rgba(20, 50 , 180, .5)
+:root {
+  --purple: rgb(88, 154, 225);
+  --offwhite: rgba(120, 128, 128, 0.897);
 }
 
-header {
-   background-color: var(--dark);
-   width: 100vw;
-   position: fixed;
-   top: 0;
+body {
+  background-color: var(--offwhite);
 }
 
-nav {
-   margin-top: 100px
+a {
+  text-decoration: none;
 }
-.container {
-   margin-top: 25px 
+
+textarea {
+  border-radius: 10px;
+  background-color: rgba(251, 251, 251, 0.897);
+}
+
+.navbar-brand {
+  margin-left: 10px;
+  color: var(--purple);
+}
+
+/* ----------- home page --------- */
+
+.blogfeed {
+  margin-left: 8%;
 }
 
 .feed {
-   border: solid 1px black;
-   width: 300%;
-   margin-bottom: 10px;
-   border-radius: 5px;
-   padding: 5px;
-} 
+  border: solid 1px black;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  min-width: 600px;
+  padding: 5px;
+  color: rgb(42, 42, 42);
+}
 
-.comment{ 
-   border: solid 1px black;
-   width: 150%;
-   border-radius: 5px;
-   padding: 5px;
+.writeanewblog {
+  display: grid;
+  place-items: center;
+  margin-right: 10%;
+}
+
+/* ----------- login page --------- */
+.loginform {
+  display: grid;
+  place-items: center;
+  margin-top: 7%;
+}
+
+.loginbtn {
+  position: relative;
+  right: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 2px;
+}
+
+.signupbtn {
+  position: relative;
+  right: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 30%;
+}
+
+/* ------------------ comments --------------------- */
+
+.comment {
+  border: solid 1px black;
+  width: 50%;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+/* ------------------ signature --------------------- */
+
+.sig {
+  font-size: 11px;
+  color: rgb(143, 183, 227);
+}
+
+/* ------------------ input --------------------- */
+
+input {
+  border-radius: 5px;
+}
+
+/* ------------------- dashboard -------------------- */
+.updatepanel {
+  display: grid;
+  place-items: center;
+  margin-top: 1%;
+  margin-right: 20%;
+}
+
+.dashheader {
+  display: grid;
+  place-items: center;
+  margin-right: 20%;
+  margin-bottom: 7%;
 }

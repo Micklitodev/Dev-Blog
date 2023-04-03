@@ -1,4 +1,4 @@
-console.log('logout js is hitting')
+console.log("logout js is hitting");
 
 const btn = document.getElementById("logOut");
 
@@ -12,12 +12,12 @@ btn.addEventListener("click", async (e) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-     message: 'logout'
+      message: "logout",
     }),
   }).then((res) => {
     console.log(res);
-    if(res.status == 204) {
-    window.location.href = '/'
+    if (res.status == 204) {
+      window.location.href = "/";
     }
   });
 });

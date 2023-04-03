@@ -3,7 +3,6 @@ const { Model, DataTypes } = require("sequelize");
 
 class Comment extends Model {}
 
-
 Comment.init(
   {
     id: {
@@ -19,16 +18,16 @@ Comment.init(
     post_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'posts', 
-        key: 'id'
+        model: "posts",
+        key: "id",
       },
     },
     username: {
       type: DataTypes.STRING,
     },
     date: {
-      type: DataTypes.DATE
-    }
+      type: DataTypes.DATE,
+    },
   },
   {
     sequelize,

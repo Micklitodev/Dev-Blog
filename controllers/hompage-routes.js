@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Posts, Comment} = require("../models");
+const { Posts, Comment } = require("../models");
 
 // ----------- show all posts ----------------
 router.get("/", async (req, res) => {
@@ -19,16 +19,15 @@ router.get("/", async (req, res) => {
 // ----------- create post ---------------------
 
 router.post("/", async (req, res) => {
-  
- let date = new Date();
- let today = date.toLocaleString();
+  let date = new Date();
+  let today = date.toLocaleString();
 
   try {
     const newPost = await Posts.create({
       post_sub: req.body.post_sub,
       post_descr: req.body.post_descr,
       username: req.session.username,
-      date: today
+      date: today,
     });
     res.status(200).json(newPost);
   } catch (err) {
@@ -111,9 +110,12 @@ router.get("/dashboard", async (req, res) => {
       const postsByUser = findPostsByUser.map((post) =>
         post.get({ plain: true })
       );
-      res
-        .status(200)
-        .render("dashboard", { postsByUser, loggedIn: req.session.loggedIn });
+      const username = req.session.username;
+      res.status(200).render("dashboard", {
+        postsByUser,
+        username,
+        loggedIn: req.session.loggedIn,
+      });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);

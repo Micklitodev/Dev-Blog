@@ -9,7 +9,7 @@ class User extends Model {
     return bcrypt.compareSync(pass, this.password);
   }
   returnUserName() {
-    return this.username
+    return this.username;
   }
 }
 
@@ -25,7 +25,7 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    email: {  
+    email: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
@@ -55,5 +55,5 @@ User.init(
     modelName: "user",
   }
 );
- 
+
 module.exports = User;

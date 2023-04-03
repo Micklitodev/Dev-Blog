@@ -1,4 +1,4 @@
-console.log('ready to post a comment to a post')  
+console.log("ready to post a comment to a post");
 
 const newCommentBtn = document.getElementById("newComment");
 
@@ -7,14 +7,13 @@ newCommentBtn.addEventListener("click", async (e) => {
 
   const comment_body = document.getElementById("comment").value;
 
-  console.log(comment_body)
-  
+  console.log(comment_body);
+
   const url = window.location.href;
-  const data = url.split('/');
+  const data = url.split("/");
   const post_id = data[data.length - 1];
 
-  console.log(post_id) 
-
+  console.log(post_id);
 
   await fetch("/api/newcomment", {
     method: "POST",
@@ -24,12 +23,12 @@ newCommentBtn.addEventListener("click", async (e) => {
     },
     body: JSON.stringify({
       comment_body: comment_body,
-      post_id: post_id
+      post_id: post_id,
     }),
   }).then((res) => {
     console.log(res);
-    if(res.status == 200) {
-        window.location.href = `/post/${post_id}`
+    if (res.status == 200) {
+      window.location.href = `/post/${post_id}`;
     }
- });
+  });
 });

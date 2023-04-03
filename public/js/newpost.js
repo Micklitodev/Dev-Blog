@@ -1,4 +1,4 @@
-console.log('prepared to make a new post')
+console.log("prepared to make a new post");
 
 const newPostBtn = document.getElementById("newPost");
 
@@ -7,9 +7,8 @@ newPostBtn.addEventListener("click", async (e) => {
 
   const post_sub = document.getElementById("sub").value;
   const post_descr = document.getElementById("body").value;
-  console.log(post_sub)
-  console.log(post_descr)
-
+  console.log(post_sub);
+  console.log(post_descr);
 
   await fetch("/", {
     method: "POST",
@@ -19,12 +18,12 @@ newPostBtn.addEventListener("click", async (e) => {
     },
     body: JSON.stringify({
       post_sub: post_sub,
-      post_descr: post_descr
+      post_descr: post_descr,
     }),
   }).then((res) => {
     console.log(res);
-    if(res.status == 200) {
-        window.location.href = '/'
+    if (res.status == 200) {
+      window.location.href = "/";
     }
   });
 });

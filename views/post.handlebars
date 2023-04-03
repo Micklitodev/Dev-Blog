@@ -1,35 +1,46 @@
-<div>
-  <div class="feed">
-    <h3>
-      {{sub}}
-    </h3>
-    <p>
-      {{descr}}
-      <br />
-      {{username}}
-      -{{format_date date}}
-    </p>
+<div class="blogfeed">
+  <div class="row">
+    <div class="feed col-10">
+      <h3>
+        {{sub}}
+      </h3>
+      <p>
+        {{descr}}
+        <br />
+        <div class="sig">
+          {{username}}
+          -{{format_date date}}
+        </div>
+      </p>
+    </div>
   </div>
-  <div>
+  <div class="col-8">
     comments:
     {{#each comment as |comment|}}
       <div class="comment">
         {{comment.comment_body}}
         <br />
-        {{comment.username}}
-        - {{ format_date comment.date}}
+        <br />
+        <div class="sig">
+          {{comment.username}}
+          -
+          {{format_date comment.date}}
+        </div>
       </div>
+      <br />
     {{/each}}
   </div>
   <div>
-
+    <br />
     {{#if loggedIn}}
       <form>
         <label for="comment"></label>
-        <textarea id="comment" name="comment" rows="10" cols="80"></textarea>
+        <textarea id="comment" name="comment" rows="8" cols="50"></textarea>
         <br />
-        <button id="newComment"> Comment </button>
+        <button class="btn btn-primary" id="newComment"> Comment </button>
       </form>
+    {{else}}
+      <h2> <a href="/login">Log in</a> to leave a comment! </h2>
     {{/if}}
   </div>
 </div>
