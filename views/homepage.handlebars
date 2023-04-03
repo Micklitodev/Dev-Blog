@@ -3,7 +3,7 @@
     {{#if loggedIn}}
       <h2 class="writeanewblog">
         Create a New Blog!
-        <button class="btn btn-primary" id="createblogbtn">create</button></h2>
+        <button class="btn btn-light" id="createblogbtn">create</button></h2>
       <form class="blogform" style="display: none">
         <label for="subject">Write A Post!</label>
         <br />
@@ -14,7 +14,7 @@
         <textarea id="body" name="body" rows="10" cols="80"></textarea>
         <br />
         <br />
-        <button id="newPost" class="btn btn-primary"> Publish </button>
+        <button id="newPost" class="btn btn-light"> Publish </button>
       </form>
     {{else}}
       <h2 class="writeanewblog">
@@ -24,9 +24,9 @@
     {{/if}}
   </div>
   <div class="blogfeed">
-    <h2>
+    <h3>
       Blog Feed
-    </h2>
+    </h3>
     {{#each posts as |post|}}
       <a href="/post/{{post.id}}">
         <div class="row">

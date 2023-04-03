@@ -1,29 +1,33 @@
 /* ------------------ global variables --------------- */
 :root {
-  --purple: rgb(88, 154, 225);
-  --offwhite: rgba(120, 128, 128, 0.897);
+  --purple: rgb(82, 151, 224);
+  --limegreen: rgba(166, 187, 121, 0.897);
+  --bgpostcolor:  rgb(54, 54, 54);
+  --text2color: rgb(184, 184, 184);
+  --lighterlimegreen: rgba(194, 218, 142, 0.897);
 }
 
 /* ------------------ individual selector --------------- */
 
 body {
-  background-color: var(--offwhite);
+  background-color: var(--limegreen);
 }
 
 a {
   text-decoration: none;
+  color: var(--bgpostcolor)
 }
 
 textarea {
   border-radius: 10px;
-  background-color: rgba(251, 251, 251, 0.897);
+  background-color: rgba(236, 235, 235, 0.897);
 }
 
 /* ------------------ home page ------------------ */
 
 .navbar-brand {
   margin-left: 10px;
-  color: var(--purple);
+  color: var(--lighterlimegreen);
 }
 
 .blogfeed {
@@ -31,12 +35,13 @@ textarea {
 }
 
 .feed {
-  border: solid 1px black;
+  border: solid 1px var(--bgpostcolor); 
   margin-bottom: 10px;
   border-radius: 5px;
   min-width: 600px;
   padding: 5px;
-  color: rgb(42, 42, 42);
+  color: var(--text2color); 
+  background-color: var(--bgpostcolor);
 }
 
 .writeanewblog {
@@ -61,21 +66,25 @@ textarea {
   margin-top: 2px;
 }
 
+/* -------------- signup page ---------------- */
+
 .signupbtn {
   position: relative;
   right: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin-top: 30%;
+  margin-top: 20%;
 }
 
 /* ----------------- comments ------------------- */
 
 .comment {
-  border: solid 1px black;
+  border: solid 1px  rgb(255, 255, 255);
+
   width: 50%;
   border-radius: 5px;
   padding: 5px;
+  background-color: rgb(255, 255, 255)
 }
 
 /* ---------------- signature ------------------- */
