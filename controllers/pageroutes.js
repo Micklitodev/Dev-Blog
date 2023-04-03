@@ -4,7 +4,9 @@ const { Posts, Comment } = require("../models");
 // ----------- homepage  ----------------
 router.get("/", async (req, res) => {
   try {
-    const allPosts = await Posts.findAll();
+    const allPosts = await Posts.findAll({
+       order: [['date', 'DESC']]
+    });
     const posts = allPosts.map((post) => post.get({ plain: true }));
     res.render("homepage", {
       posts,
@@ -76,6 +78,7 @@ router.get("/dashboard", async (req, res) => {
         where: {
           username: req.session.username,
         },
+        order: [['date', 'DESC']]
       });
 
       const postsByUser = findPostsByUser.map((post) =>
