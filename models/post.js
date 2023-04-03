@@ -35,6 +35,9 @@ Posts.init(
       key: "id",
     },
   },
+  date: {
+    type: DataTypes.DATE
+  }
 },
   {
     sequelize,

@@ -5,9 +5,9 @@
     </h3>
     <p>
       {{descr}}
-      -
+      <br />
       {{username}}
-      {{post.date_time}}
+      -{{format_date date}}
     </p>
   </div>
   <div>
@@ -16,7 +16,8 @@
       <div class="comment">
         {{comment.comment_body}}
         <br />
-        -{{comment.username}}
+        {{comment.username}}
+        - {{ format_date comment.date}}
       </div>
     {{/each}}
   </div>
@@ -31,4 +32,4 @@
       </form>
     {{/if}}
   </div>
-</div>  
+</div>

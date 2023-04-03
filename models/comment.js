@@ -26,6 +26,9 @@ Comment.init(
     username: {
       type: DataTypes.STRING,
     },
+    date: {
+      type: DataTypes.DATE
+    }
   },
   {
     sequelize,

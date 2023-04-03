@@ -1,0 +1,40 @@
+<div>
+  <h2> {{username}} </h2>
+
+  <h3> Your Blogs </h3>
+  <div>
+    {{#each postsByUser as |post|}}
+      <a href="/post/{{post.id}}">
+        <div class="feed">
+          <h3>
+            {{post.post_sub}}
+          </h3>
+          <p>
+            {{post.post_descr}}
+            -
+            {{post.username}}
+            {{post.date_time}}
+          </p>
+        </div>
+      </a>
+      <div class="updateform" id="{{post.id}}" style="display: none">
+        <label for="subject">Update Post!</label>
+        <input type="text" id="updatepostsub" name="subject" />
+        <br />
+        <label for="comment"></label>
+        <textarea
+          id="updatepostdescr"
+          name="comment"
+          rows="10"
+          cols="80"
+        ></textarea>
+        <button class="inputUpdateFields"> Update </button>
+        <div id="cancelbtn"></div>
+      </div>
+      <button class="updatebtn" id="{{post.id}}"> Update </button>
+      <button class="delbtn" id="{{post.id}}"> Delete </button>
+    {{/each}}
+
+  </div>
+
+</div>

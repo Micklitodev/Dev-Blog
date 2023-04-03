@@ -26,9 +26,10 @@
           </h3>
           <p>
             {{post.post_descr}}
-            -
+            <br>
             {{post.username}}
-            {{post.date_time}}
+            - {{format_date post.date}}
+            {{!-- {{ format_date painting.exhibition_date}} --}}
           </p>
         </div>
       </a>
