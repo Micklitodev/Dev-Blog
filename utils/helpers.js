@@ -8,3 +8,4 @@ module.exports = {
     ).getDate()}/${new Date(date).getFullYear()}`;
   },
 };
+ 

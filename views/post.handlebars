@@ -9,7 +9,10 @@
         <br />
         <div class="sig">
           {{username}}
-          -{{format_date date}}
+          - at
+          {{format_time date}}
+          on
+          {{format_date date}}
         </div>
       </p>
     </div>
@@ -23,7 +26,9 @@
         <br />
         <div class="sig">
           {{comment.username}}
-          -
+          - at
+          {{format_time comment.date}}
+          on
           {{format_date comment.date}}
         </div>
       </div>
@@ -35,7 +40,12 @@
     {{#if loggedIn}}
       <form>
         <label for="comment"></label>
-        <textarea id="comment" name="comment" rows="8" cols="50"></textarea>
+        <textarea
+          id="comment"
+          name="comment"
+          rows="10"
+          class="col-9"
+        ></textarea>
         <br />
         <button class="btn btn-dark" id="newComment"> Comment </button>
       </form>

@@ -38,7 +38,6 @@ textarea {
   border: solid 1px var(--bgpostcolor); 
   margin-bottom: 10px;
   border-radius: 5px;
-  min-width: 600px;
   padding: 5px;
   color: var(--text2color); 
   background-color: var(--bgpostcolor);
@@ -80,8 +79,6 @@ textarea {
 
 .comment {
   border: solid 1px  rgb(255, 255, 255);
-
-  width: 50%;
   border-radius: 5px;
   padding: 5px;
   background-color: rgb(255, 255, 255)
@@ -98,15 +95,10 @@ textarea {
 
 input {
   border-radius: 5px;
+  border: solid 1px  var(--bgpostcolor)
 }
 
 /* ------------------- dashboard -------------------- */
-.updatepanel {
-  display: grid;
-  place-items: center;
-  margin-top: 1%;
-  margin-right: 20%;
-}
 
 .dashheader {
   display: grid;
