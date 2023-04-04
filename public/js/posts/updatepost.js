@@ -13,14 +13,16 @@ for (let update of updatebtn) {
 }
 
 const resolveData = (eventID) => {
-  const form = document.querySelector(".updateform");
-  form.style.cssText = "display: block;";
+  const updateBtn = document.getElementById(eventID);
+  const parent = updateBtn.parentNode;
+  const form = parent.querySelector(".updateform");
+  form.style.display = "block";
 
-  const newBtn = document.querySelector(".inputUpdateFields");
+  const newBtn = form.querySelector(".inputUpdateFields");
 
   newBtn.addEventListener("click", async () => {
-    const post_sub = document.getElementById("updatepostsub").value;
-    const post_descr = document.getElementById("updatepostdescr").value;
+    const post_sub = form.querySelector("#updatepostsub").value;
+    const post_descr = form.querySelector("#updatepostdescr").value;
     const post_id = eventID;
 
     await fetch("/api/dashboard", {
